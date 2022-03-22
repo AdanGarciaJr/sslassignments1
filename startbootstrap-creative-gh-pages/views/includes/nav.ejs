@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                <% if(pagename == "index") {%>
+                <li class="nav-item"><a id="home" class="nav-link" style="color: orange" href="index">Home</a></li>
+                <%} else {%>
+                <li class="nav-item"><a id="home" class="nav-link" style="color: black" href="index">Home</a></li>
+                <%}%>
+                <% if(pagename == "services") {%>
+                <li class="nav-item"><a id="services" class="nav-link" style="color: orange" href="services">Services</a></li>
+                <%} else {%>
+                <li class="nav-item"><a id="services" class="nav-link" style="color: black" href="services">Services</a></li>
+                <%}%>
+                <% if(pagename == "contact") {%>
+                <li class="nav-item"><a id="contact" class="nav-link" style="color: orange" href="contact">Contact</a></li>
+                <%} else {%>
+                <li class="nav-item"><a id="contact" class="nav-link" style="color: black" href="contact">Contact</a></li> 
+                <%}%>
+                <% if(pagename == "register") {%>
+                <li class="nav-item"><a id="contact" class="nav-link" style="color: orange" href="register">Register</a></li>
+                <%} else {%>
+                <li class="nav-item"><a id="contact" class="nav-link" style="color: black" href="register">Register</a></li> 
+                <%}%>   
+            </ul>
+        </div>
+    <!-- <div style="z-index:12;
+    display:block;
+    text-align:right;
+    background-color: #333a40;
+    margin-right: 0rem;
+    padding-right:1.25rem;
+    color: gray;
+    position: absolute;
+    width: 16rem;
+    margin-top:3.5rem;
+    padding-top: 5rem;
+    right: 1rem;
+    border-radius: .75rem;
+    padding: .75rem;
+    font-size: 1rem;">
+    <!-- <form action="login" method="POST">
+        <input type="text" name="firstname" placeholder="First Name"/>
+        <input type="text" name="lastname" placeholder="Last Name"/>
+        <input type="text" name="address" placeholder="Address">
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="State" placeholder="Zip">
+
+        <div style="padding-top: .4rem;">
+            <button type="submit">SUBMIT</button>
+        </div>
+    </form> -->
+    </div> -->
+    </div>
+</nav>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Creative - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link defer href="/css/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
+</head>
+<body>
+    
+
+    <h1>REGISTER NOW!</h1>
+    
+    <%- include("includes/nav.ejs") %>
+    <div style="float: right; padding-right: 2.5rem; padding-top:8rem;">
+        <% if(typeof(errs) != "undefined"){%>
+            <% errs.forEach((error) => {%>
+                <br/><span style="color:red; font-weight:bolder;"><%=error%></span>
+            <%})%>
+            <%}%>
+    </div>
+    <form action="login" method="POST" style="display:block; padding-top: 2rem; padding-left: 2rem; max-width: 8rem;">
+        <input type="text" name="firstname" placeholder="First Name"/>
+        <input type="text" name="lastname" placeholder="Last Name"/>
+        <input type="text" name="address" placeholder="Address">
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="zip" placeholder="Zip">
+        <div>
+            <p>Gender?</p>
+            <div>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+        <p>Do You Consent?</p>
+        <input type="checkbox" id="consent" name="consent" value="consent">
+        <label for="consent"> I consent</label><br>
+        
+        <label for="bio">Write a Short Bio</label>
+        <textarea name="bio" id="bio" rows="4" cols="50"></textarea>
+
+        <div style="padding-top: .4rem;">
+            <button type="submit">SUBMIT</button>
+        </div>
+    </form>
+    
+</body>
+    <footer class="bg-light py-5">
+        <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2021 - Company Name</div></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script>document.getElementById(page).style.color = 'red';</script>
+</body>
+</html>
