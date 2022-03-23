@@ -1,0 +1,39 @@
+//my nodejs file requests.js, to run it >> node requests.js //not sure if this was an error but i commented this first line
+
+const { executionAsyncResource } = require('async_hooks');
+let http = require('http'); // corrected htt to http
+let myname = function(){    // fixed the error in the word function
+    return("Here is my IP address"); // changed to return
+}
+async function callHttpbin() { //fixed the spelling of function name and added async
+    let promise = new Promise((resolve, reject) => {
+        http.get(
+            'http://httpbin.org/ip',
+            function(response) {
+            let str="";
+            response.setEncoding('utf8');
+            response.on('data', function(data){
+            str += data;
+        });
+        response.on('end', function() {
+        let result = JSON.parse(str);
+        myips = result.origin;
+        resolve();
+        });
+        }
+    );
+    });
+
+    result = await promise; //declared twice removed the let
+    return(myips); //returned the result
+    
+}
+
+executeAsyncTask(); //call the function to display data
+
+async function executeAsyncTask(){ // added async to the function
+    const valueA = await callHttpbin();
+    const valueB = myname();
+    console.log(valueB+" "+valueA)
+} //Added the missing curly brace
+// Output Here is my IP address 149.24.160.1
