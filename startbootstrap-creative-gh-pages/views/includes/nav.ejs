@@ -23,35 +23,50 @@
                 <li class="nav-item"><a id="contact" class="nav-link" style="color: orange" href="register">Register</a></li>
                 <%} else {%>
                 <li class="nav-item"><a id="contact" class="nav-link" style="color: black" href="register">Register</a></li> 
-                <%}%>   
+                <%}%> 
+                
+                <% if(typeof(sess)!= "undefined" && sess.loggedin == true){%>
+                    <%if(pagename == "profile"){%>
+                        <li class="nav-item"><a id="contact" class="nav-link" style="color: orange" href="profile">Profile</a></li>
+                        <%} else {%>
+                        <li class="nav-item"><a id="contact" class="nav-link" style="color: black" href="profile">Profile</a></li> 
+                        <%}%>
+                        <li class="nav-item"><a id="contact" class="nav-link" style="color: black" href="logout">Logout</a></li>
+                <%}%>
             </ul>
+            
         </div>
-    <!-- <div style="z-index:12;
+    <div style="z-index:12;
     display:block;
     text-align:right;
     background-color: #333a40;
     margin-right: 0rem;
-    padding-right:1.25rem;
+    padding-right:4rem;
     color: gray;
     position: absolute;
     width: 16rem;
-    margin-top:3.5rem;
+    margin-top:6rem;
     padding-top: 5rem;
     right: 1rem;
     border-radius: .75rem;
     padding: .75rem;
     font-size: 1rem;">
-    <!-- <form action="login" method="POST">
-        <input type="text" name="firstname" placeholder="First Name"/>
-        <input type="text" name="lastname" placeholder="Last Name"/>
-        <input type="text" name="address" placeholder="Address">
-        <input type="text" name="city" placeholder="City">
-        <input type="text" name="State" placeholder="Zip">
+    <form action="login" method="POST">
+        <input type="email" name="email" placeholder="email"/>
+        <input type="password" name="password" placeholder="password"/>
 
         <div style="padding-top: .4rem;">
             <button type="submit">SUBMIT</button>
         </div>
-    </form> -->
-    </div> -->
+        <div style="float: right; padding-right: 2.5rem; padding-top:0rem;">
+            <% if(typeof(errs) != "undefined"){%>
+                <% errs.forEach((error) => {%>
+                    <br/><span style="color:red; font-weight:bolder;"><%=error%></span>
+                <%})%>
+                <%}%>
+        </div>
+    </form>
+    </div>
+    
     </div>
 </nav>
